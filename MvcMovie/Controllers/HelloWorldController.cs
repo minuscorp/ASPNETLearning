@@ -10,23 +10,27 @@ namespace MvcMovie.Controllers
     {
         //
         // GET: /HelloWorld/
-        /*public ActionResult Index()
+        public ActionResult Index()
         {
             return View();
-        }*/
-
-        //
-        // GET: /HelloWorld/
-        public string Index()
-        {
-            return "This is my <b>default</b> action...";
         }
 
         //
-        // GET: /HelloWorld/Welcome
-        public string Welcome(string name, int ID = 1)
+        // GET: /HelloWorld/
+        /*public string Index()
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            return "This is my <b>default</b> action...";
+        }*/
+
+        //
+        // GET: /HelloWorld/Welcome
+        public ActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
+            //return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
         }
 	}
 }
